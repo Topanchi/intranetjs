@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="container mt-2">
-    <b-navbar toggleable="md" type="dark" variant="dark">
+    <b-navbar toggleable="lg" type="dark" variant="dark">
       <b-container>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-navbar-brand href="#">SGD-Ingemat</b-navbar-brand>

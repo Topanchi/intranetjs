@@ -17,8 +17,8 @@
     </div>
     
     <div class="card-body" v-if="!carga">
-        <b-table sticky-header striped hover bordered sm responsive="sm" :items="items" :fields="fields"></b-table>
-        <table class="table table-sm table-striped table-bordered">
+        <!--<b-table sticky-header striped hover bordered sm responsive="sm" :items="items" :fields="fields"></b-table>-->
+        <table class="table table-sm table-striped table-bordered table-responsive-lg">
           <thead>
             <tr>
               <th>Código</th>
@@ -65,7 +65,7 @@ export default {
   data() {
     return {
      // fields: ['Codigo', 'Nombre', 'Docente', 'Rexe', 'Horas', 'Unidad', 'Acción'],  
-      fields: [
+      /*fields: [
           { key: 'Codigo', sortable: true },
           { key: 'Nombre', sortable: true },
           { key: 'Docente', sortable: false },
@@ -77,7 +77,7 @@ export default {
         items: [
           { isActive: true, Codigo: 'ICM 113', Nombre: 'Química General	', Docente: 'Andrea Jimenez',Rexe: 'pregrado', Horas: '4.5', Unidad: 'Instituto Ingeniería Matemática', Accion: ''},
           { isActive: false, Codigo: 'ICM 215', Nombre: 'Idioma 1', Docente: 'Héctor Olivero', Rexe: 'doctorado', Horas: '3.5', Unidad: 'Instituto Ingeniería Matemática',Accion: '' }
-        ],
+        ],*/
       texto: ''
     }  
   },

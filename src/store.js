@@ -94,7 +94,7 @@ export default new Vuex.Store({
     getPublicaciones({commit}){
       commit('cargarFirebase', true);
       const publicaciones = []
-      db.collection('papers').get()
+      db.collection('papers').orderBy("ano", "desc").get()
       .then(snapshot => {
         snapshot.forEach( doc => {
           let publicacione = doc.data();
@@ -118,7 +118,7 @@ export default new Vuex.Store({
     getDocencias({commit}){
       commit('cargarFirebase', true);
       const docencias = []
-      db.collection('docencia').get() //.orderBy('fecha', "desc")
+      db.collection('docencia').orderBy("codigo", "asc").get() //.orderBy('fecha', "desc")
       .then(snapshot => {
         snapshot.forEach( doc => {
           let docencia = doc.data();
