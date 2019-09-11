@@ -118,7 +118,7 @@ export default new Vuex.Store({
     getDocencias({commit}){
       commit('cargarFirebase', true);
       const docencias = []
-      db.collection('docencia').orderBy("codigo", "asc").get() //.orderBy('fecha', "desc")
+      db.collection('docencia').orderBy("codigo", "asc").get()
       .then(snapshot => {
         snapshot.forEach( doc => {
           let docencia = doc.data();

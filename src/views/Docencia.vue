@@ -6,18 +6,12 @@
       <button class="btn btn-success btn-sm btn-block">Agregar</button>
     </router-link>
     
-    <!--
-    <form @submit.prevent="buscador(texto)">
-      <input type="text" placeholder="Buscar..." class="form-control mt-5" v-model="texto" v-on:keyup="buscador(texto)">
-    </form>
-    -->
     <div v-if="carga" class="text-center mt-5">
       <h3>Cargando contenido...</h3>
       <pulse-loader :loading="carga"></pulse-loader>
     </div>
     
     <div class="card-body" v-if="!carga">
-        <!--<b-table sticky-header striped hover bordered sm responsive="sm" :items="items" :fields="fields"></b-table>-->
         <table class="table table-sm table-striped table-bordered table-responsive-lg">
           <thead>
             <tr>
@@ -64,20 +58,6 @@ export default {
   name: 'Inicio',
   data() {
     return {
-     // fields: ['Codigo', 'Nombre', 'Docente', 'Rexe', 'Horas', 'Unidad', 'Acción'],  
-      /*fields: [
-          { key: 'Codigo', sortable: true },
-          { key: 'Nombre', sortable: true },
-          { key: 'Docente', sortable: false },
-          { key: 'Rexe', sortable: false },
-          { key: 'Horas', sortable: false },
-          { key: 'Unidad', sortable: false} ,
-          { key: 'Accion', sortable: false }
-        ],
-        items: [
-          { isActive: true, Codigo: 'ICM 113', Nombre: 'Química General	', Docente: 'Andrea Jimenez',Rexe: 'pregrado', Horas: '4.5', Unidad: 'Instituto Ingeniería Matemática', Accion: ''},
-          { isActive: false, Codigo: 'ICM 215', Nombre: 'Idioma 1', Docente: 'Héctor Olivero', Rexe: 'doctorado', Horas: '3.5', Unidad: 'Instituto Ingeniería Matemática',Accion: '' }
-        ],*/
       texto: ''
     }  
   },
