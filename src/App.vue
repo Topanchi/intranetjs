@@ -9,6 +9,7 @@
             <b-nav-item :to="{name: 'inicio'}" v-if="existeUsuario" class="mx-2" exact>Inicio</b-nav-item>
             <b-nav-item :to="{name: 'publicaciones'}" v-if="existeUsuario" class="mx-2" exact>Publicaciones</b-nav-item>
             <b-nav-item :to="{name: 'docencia'}" v-if="existeUsuario" class="mx-2" exact>Docencia</b-nav-item>
+             <b-nav-item :to="{name: 'seminarios'}" v-if="existeUsuario" class="mx-2" exact>Seminarios</b-nav-item>
             <b-nav-item :to="{name: 'registro'}" v-if="!existeUsuario" class="mx-2">Registro</b-nav-item>
             <b-nav-item :to="{name: 'ingreso'}" v-if="!existeUsuario" class="mx-2">Ingresar</b-nav-item>
             <b-nav-item @click="cerrarSesion" v-if="existeUsuario" class="mx-2">Cerrar sesión</b-nav-item>

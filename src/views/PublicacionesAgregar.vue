@@ -48,7 +48,7 @@
                                 Año
                             </div>
                         </div>
-                        <input type="text" class="form-control" v-model="$v.ano.$model">
+                        <input type="number" class="form-control" v-model="$v.ano.$model">
                     </div> 
                     <small class="text-danger d-block" v-if="!$v.ano.required">Campo requerido</small>
                     <div class="input-group mb-2 mr-sm-2">

@@ -37,6 +37,12 @@ const router = new Router({
       meta: { requiresAuth: true }
     },
     {
+      path: '/seminarios',
+      name: 'seminarios',
+      component: () => import(/* webpackChunkName: "seminarios" */ './views/Seminarios.vue'),
+      meta: { requiresAuth: true }
+    },
+    {
       path: '/editarPublicaciones/:id',
       name: 'editarPublicaciones',
       component: () => import(/* webpackChunkName: "editarPublicaciones" */ './views/PublicacionesEditar.vue'),

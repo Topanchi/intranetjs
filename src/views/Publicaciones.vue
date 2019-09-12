@@ -33,9 +33,15 @@
             <td>{{ item.autor }}</td>
             <td>{{ item.ano }}</td>
             <td class="text-center">
-              <span v-if="item.autor === item.autor && item.titulo === item.titulo && item.ano === item.ano && item.vol === item.vol && item.categoria === item.categoria && item.doi === item.doi && item.link === item.link && item.isbn === item.isbn && item.revista === item.revista && item.estado === item.estado && item.impact === item.impact && item.paginas === item.paginas">
-                <font-awesome-icon icon="check" />
-              </span>
+              <span v-if="item.autor != '' && 
+                          item.titulo != '' && item.ano != '' && 
+                          item.vol != '' && item.categoria != '' && 
+                          item.doi != '' && item.link != '' && 
+                          item.isbn != '' && item.revista != '' && 
+                          item.estado != '' && item.impact != '' && 
+                          item.paginas != ''">
+                            <font-awesome-icon icon="check" />
+              </span><span v-else></span>
             </td>
             <td>
               <span class="pointer" @click="eliminarPublicaciones(item.id)">

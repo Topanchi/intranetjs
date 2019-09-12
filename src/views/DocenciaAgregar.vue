@@ -49,7 +49,7 @@
                                 Horas
                             </div>
                         </div>
-                        <input type="text" class="form-control" v-model="$v.horas.$model">
+                        <input type="number" class="form-control" v-model="$v.horas.$model">
                     </div>
                     <div class="input-group mb-2 mr-sm-2">
                         <div class="input-group-prepend">
