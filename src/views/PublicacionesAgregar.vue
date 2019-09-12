@@ -24,7 +24,6 @@
                         <input type="text" class="form-control" v-model="$v.autor.$model">
                     </div>
                     <small class="text-danger d-block" v-if="!$v.autor.required">Campo requerido</small>
-                    <hr>
                     <div class="input-group mb-2 mr-sm-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text">

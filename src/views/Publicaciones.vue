@@ -20,8 +20,8 @@
       <table class="table table-sm table-striped table-bordered">
         <thead>
           <tr>
-            <th>Autor</th>
             <th>Título</th>
+            <th>Autor</th>
             <th>Año</th>
             <th>Info</th>
             <th>Acción</th>
@@ -29,8 +29,8 @@
         </thead>
         <tbody>
           <tr v-for="item in arrayFiltrado2" :key="item.id">
-            <td>{{ item.autor }}</td>
             <td>{{ item.titulo }}</td>
+            <td>{{ item.autor }}</td>
             <td>{{ item.ano }}</td>
             <td class="text-center">
               <span v-if="item.autor === item.autor && item.titulo === item.titulo && item.ano === item.ano && item.vol === item.vol && item.categoria === item.categoria && item.doi === item.doi && item.link === item.link && item.isbn === item.isbn && item.revista === item.revista && item.estado === item.estado && item.impact === item.impact && item.paginas === item.paginas">
