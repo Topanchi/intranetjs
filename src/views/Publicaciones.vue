@@ -52,15 +52,17 @@
                   <i class="edit"></i><font-awesome-icon icon="edit" />
                 </span> |
               </router-link>
-              <span class="pointer">
+              <span class="pointer" v-b-modal.modal-1>
                 <i class="eye"></i><font-awesome-icon icon="eye" />
               </span>
             </td>
           </tr>
         </tbody>
       </table>
+      <b-modal id="modal-1" title="Detalles del artículo">
+       
+      </b-modal>
     </div>
-<i class="fas fa-eye"></i>
   </div>
 </template>
 

@@ -14,6 +14,8 @@ export default new Vuex.Store({
     publicacione: {id:'', autor:'',titulo:'',ano:'',vol:'',categoria:'',doi:'',link:'',isbn:'',revista:'',estado:'',impact:'',paginas:''},
     docencias: [],
     docencia: {id:'', codigo:'',nombre:'', docente:'', rexe:'', horas:'', unidad:''},
+    seminarios: [],
+    seminario: {id:'', tema:'', expositor:'', procedencia:'', fecha:'', anoS: ''},
     carga: false,
     texto: ''
   },
@@ -43,6 +45,17 @@ export default new Vuex.Store({
     },
     eliminarPublicaciones(state, id){
       state.publicaciones = state.publicaciones.filter( doc => {
+        return doc.id != id
+      })
+    },
+    setSeminarios(state, seminarios){
+      state.seminarios = seminarios
+    },
+    setSeminario(state, publicacione){
+      state.seminario = seminario
+    },
+    eliminarSeminarios(state, id){
+      state.seminarios = state.seminarios.filter( doc => {
         return doc.id != id
       })
     },
@@ -139,6 +152,30 @@ export default new Vuex.Store({
           commit('setDocencia', docencia)
       })
     },
+    getSeminarios({commit}){
+      commit('cargarFirebase', true);
+      const seminarios = []
+      db.collection('seminario').orderBy("ano", "desc").get()
+      .then(snapshot => {
+        snapshot.forEach( doc => {
+          let seminario = doc.data();
+          seminario.id = doc.id
+          seminarios.push(seminario)
+        })
+        setTimeout(()=>{
+          commit('cargarFirebase', false);
+        }, 2000);
+      })
+      commit('setSeminarios', seminarios)
+    },
+    getSeminario({commit}, id){
+      db.collection('seminario').doc(id).get()
+      .then(doc =>{
+          let seminario = doc.data();
+          seminario.id = doc.id
+          commit('setPublicacione', seminario)
+      })
+    },
     editarPublicaciones({commit}, publicacione){
       db.collection('papers').doc(publicacione.id).update({
         autor: publicacione.autor,
@@ -172,6 +209,18 @@ export default new Vuex.Store({
         router.push({name: 'docencia'})
       })
     },/**/
+    editarSeminarios({commit}, seminario){
+      db.collection('seminario').doc(seminario.id).update({
+        tema: seminario.tema,
+        expositor: seminario.expositor,
+        fecha: seminario.fecha,
+        procedencia: seminario.procedencia,
+        anoS: seminario.anoS
+      })
+      .then(()=>{
+        router.push({name: 'seminarios'})
+      })
+    },
     agregarPublicaciones({commit}, {autor,titulo,revista,ano,vol,paginas,categoria,corresponding,estado,isbn,impact,doi,link}){
       commit('cargarFirebase', true);
       const usuario = firebase.auth().currentUser
@@ -223,6 +272,14 @@ export default new Vuex.Store({
         commit('eliminarPublicaciones', id)
       })
     },
+    eliminarSeminarios({commit, dispatch}, id){
+      db.collection('seminario').doc(id).delete()
+      .then(()=>{
+        console.log('Seminario eliminado');
+        //dispatch('getTareas')
+        commit('eliminarSeminarios', id)
+      })
+    },
     eliminarDocencia({commit, dispatch}, id){
       db.collection('docencia').doc(id).delete()
       .then(()=>{
@@ -258,6 +315,16 @@ export default new Vuex.Store({
         }
       }
       return arregloFiltrado2;
+    },
+    arrayFiltrado3(state){
+      let arrayFiltrado3 = []
+      for(let seminario of state.seminarios){
+        let expositor = seminario.expositor.toLowerCase();
+        if(expositor.indexOf(state.texto) >= 0){
+          arrayFiltrado3.push(seminario);
+        }
+      }
+      return arrayFiltrado3;
     }  
   }
 })
