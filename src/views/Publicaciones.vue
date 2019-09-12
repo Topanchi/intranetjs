@@ -50,14 +50,17 @@
               <router-link :to="{name: 'editarPublicaciones', params:{id: item.id}}">
                 <span class="pointer">
                   <i class="edit"></i><font-awesome-icon icon="edit" />
-                </span>
+                </span> |
               </router-link>
+              <span class="pointer">
+                <i class="eye"></i><font-awesome-icon icon="eye" />
+              </span>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-
+<i class="fas fa-eye"></i>
   </div>
 </template>
 

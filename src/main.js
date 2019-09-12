@@ -10,9 +10,9 @@ import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue)
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret,faTrashAlt, faEdit, faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret,faTrashAlt, faEdit, faCheck, faEye } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faUserSecret,faTrashAlt,faEdit, faCheck)
+library.add(faUserSecret,faTrashAlt,faEdit, faCheck, faEye)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 /*
 import DatatableFactory from 'vuejs-datatable';
