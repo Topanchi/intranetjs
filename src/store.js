@@ -51,7 +51,7 @@ export default new Vuex.Store({
     setSeminarios(state, seminarios){
       state.seminarios = seminarios
     },
-    setSeminario(state, publicacione){
+    setSeminario(state, seminario){
       state.seminario = seminario
     },
     eliminarSeminarios(state, id){
@@ -173,7 +173,7 @@ export default new Vuex.Store({
       .then(doc =>{
           let seminario = doc.data();
           seminario.id = doc.id
-          commit('setPublicacione', seminario)
+          commit('setSeminario', seminario)
       })
     },
     editarPublicaciones({commit}, publicacione){
@@ -215,7 +215,7 @@ export default new Vuex.Store({
         expositor: seminario.expositor,
         fecha: seminario.fecha,
         procedencia: seminario.procedencia,
-        anoS: seminario.anoS
+        ano: seminario.ano
       })
       .then(()=>{
         router.push({name: 'seminarios'})

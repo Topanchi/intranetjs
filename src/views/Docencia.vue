@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h1>Docencia</h1>
 
     <router-link :to="{name: 'agregarDocencia'}">

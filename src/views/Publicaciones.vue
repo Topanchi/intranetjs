@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h1>Publicaciones</h1>
 
     <router-link :to="{name: 'agregarPublicaciones'}">
@@ -17,7 +17,7 @@
     </div>
 
     <div class="card-body" v-if="!carga">
-      <table class="table table-sm table-striped table-bordered">
+      <table class="table table-sm table-striped table-bordered table-responsive-lg">
         <thead>
           <tr>
             <th>Título</th>

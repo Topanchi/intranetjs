@@ -1,6 +1,10 @@
 <template>
-    <div>
+    <div class="container">
         <h1>Seminarios</h1>
+
+        <router-link :to="{name: 'agregarSeminario'}">
+          <button class="btn btn-success btn-sm btn-block">Agregar</button>
+        </router-link>
 
         <div v-if="carga" class="text-center mt-5">
             <h3>Cargando contenido...</h3>
@@ -8,7 +12,7 @@
         </div>
 
         <div class="card-body" v-if="!carga">
-            <table class="table table-sm table-striped table-bordered">
+            <table class="table table-sm table-striped table-bordered table-responsive-lg">
                 <thead>
                 <tr>
                     <th>Tema</th>
