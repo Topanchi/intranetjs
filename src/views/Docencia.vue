@@ -58,7 +58,37 @@ export default {
   name: 'Inicio',
   data() {
     return {
-      texto: ''
+      texto: '',
+      fields: [
+        {
+          key: 'Codigo',
+          sortable: true
+        },
+        {
+          key: 'Nombre',
+          sortable: false
+        },
+        {
+          key: 'Docente',
+          sortable: false
+        },
+        {
+          key: 'Rexe',
+          sortable: false
+        },
+        {
+          key: 'Horas',
+          sortable: false
+        },
+        {
+          key: 'Unidad',
+          sortable: false
+        },
+        {
+          key: 'Accion',
+          sortable: false
+        }
+      ],
     }  
   },
   computed:{

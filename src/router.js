@@ -71,6 +71,12 @@ const router = new Router({
       name: 'agregarPublicaciones',
       component: () => import(/* webpackChunkName: "agregarPublicaciones" */ './views/PublicacionesAgregar.vue'),
       meta: { requiresAuth: true }
+    },
+    {
+      path: '/agregarSeminario/',
+      name: 'agregarSeminario',
+      component: () => import(/* webpackChunkName: "agregarSeminario" */ './views/SeminariosAgregar.vue'),
+      meta: { requiresAuth: true }
     }
   ]
 })

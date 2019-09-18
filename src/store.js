@@ -264,6 +264,22 @@ export default new Vuex.Store({
         commit('cargarFirebase', false);
       })
     },
+    agregarSeminario({commit}, {expositor, procedencia, tema, ano, fecha}){
+      commit('cargarFirebase', true);
+      db.collection('seminario').add({
+        expositor: expositor,
+        procedencia: procedencia,
+        tema: tema,
+        ano: ano,
+        fecha: fecha
+      })
+      .then(doc =>{
+        console.log(doc.id);
+        console.log("Doc AGREGADA");
+        router.push({name: 'seminarios'})
+        commit('cargarFirebase', false);
+      })
+    },
     eliminarPublicaciones({commit, dispatch}, id){
       db.collection('papers').doc(id).delete()
       .then(()=>{
